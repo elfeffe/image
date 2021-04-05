@@ -208,6 +208,7 @@ abstract class AbstractDecoder
      */
     public function isUrl()
     {
+        this->data = filter_var(this->data, FILTER_SANITIZE_URL);
         return (bool) filter_var($this->data, FILTER_VALIDATE_URL);
     }
 
